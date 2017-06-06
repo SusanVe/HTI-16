@@ -16,7 +16,12 @@
 				var currentTime = new Date()
 				var hours = currentTime.getHours()
 				var minutes = currentTime.getMinutes()
-				document.write(hours+":"+minutes);
+        if (minutes > 9) {
+  			document.write(hours+":"+minutes);
+      }
+      else {
+        document.write(hours+":0"+minutes);
+      }
 				//-->
 			</script>
 		</div>

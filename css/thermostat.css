@@ -9,6 +9,10 @@ body, div, p {
 	font-weight:lighter;
 }
 
+h2 {
+	font-weight: lighter;
+	font-family: Calibri;
+}
 h3 {
 	font-weight: lighter;
 	font-size: 25px;

@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Thermostat</title>
+      <link rel="stylesheet" href="css/thermostat.css">
+    </head>
+  <body>
+    <div style="padding:5px">
+      <div style='float:right'>
+        <script type="text/javascript">
+        <!--
+        var currentTime = new Date()
+        var hours = currentTime.getHours()
+        var minutes = currentTime.getMinutes()
+        if (minutes > 9) {
+        document.write(hours+":"+minutes);
+      }
+      else {
+        document.write(hours+":0"+minutes);
+      }
+        //-->
+        </script>
+      </div>
+        <div style= "float:left">
+          <div><a href="thermostat.html"><img src="images/larrow.png"></a>
+        </div>
+      </div>
+      <h2>Day/Night Temperature</h2>
+
+      <div id="setTemp">
+        <form>
+          <span style='width:150px;display:inline-block;'>Day temperature:</span></br>
+          <input type="number" id="dayTemp" style="width: 5em"> °C</br></br>
+          <span style='width:150px;display:inline-block;'>Night temperature:</span></br>
+          <input type="number" id="nightTemp" style="width: 5em"> °C</br>
+        </form>
+      </div>
+
+  </body>
+</html>

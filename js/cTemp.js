@@ -1,10 +1,10 @@
 var ServerUrl = 'http://wwwis.win.tue.nl/2id40-ws/16';
-var t= 21;
+var t= get("currentTemperature", "current_temperature");
 
 function minTemp() {
-  var t = getTemp();
     if (t > 5) {
-        t= Math.round(10*(t-0.1))/10;
+        t= Math.round( 10 *(t-(+0.1)))/10;
+        put("currentTemperature","current_temperature",t)
         document.getElementById("cTemp").innerHTML=t+" °C";
     }
 }
@@ -12,6 +12,7 @@ function minTemp() {
 function plusTemp() {
     if (t < 30) {
         t= Math.round( 10 *(t-(-0.1)))/10;
+        put("currentTemperature","current_temperature",t)
         document.getElementById("cTemp").innerHTML=t+" °C";
     }
 }
@@ -37,6 +38,9 @@ function put(attribute_name, xml_tag, value){
 
     }
     function getTemp() {
+      var temp = get("currentTemperature", "current_temperature");
+      document.getElementById("cTemp").innerHTML= temp;
+    }
       function requestData(address, func) {
           var result;
           $.ajax({
@@ -60,6 +64,3 @@ function put(attribute_name, xml_tag, value){
               }
           );
       }
-      var temp = get("currentTemperature", "current_temperature");
-      document.getElementById("cTemp").innerHTML= temp;
-    }

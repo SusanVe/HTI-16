@@ -6,8 +6,8 @@ function submitDay(attribute_name, xml_tag, value){
 }
 
 function submitNight(attribute_name, xml_tag, value){
-  var nightTemp = document.getElementById("nightTemp").value;
-  put("nightTemperature", "night_temperature", nightTemp);
+  var nightTemper = document.getElementById("nightTemp").value;
+  put("nightTemperature", "night_temperature", nightTemper);
 }
 
 function get(attribute_name, xml_tag) {

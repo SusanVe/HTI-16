@@ -11,25 +11,25 @@ function save(){
     var two = document.getElementById('two').value;
     /*add various types of checks here*/
     if (one != "" && two != "") {
-        sessionStorage.setItem(one,two); 
+        sessionStorage.setItem(one,two);
         display();
         document.getElementById('one').value="";
-        document.getElementById('two').value="";        
-    }   
+        document.getElementById('two').value="";
+    }
 }
 
 function remove(item){
-    sessionStorage.removeItem(item); 
+    sessionStorage.removeItem(item);
     display();
     document.getElementById('one').value="";
-    document.getElementById('two').value=""; 
+    document.getElementById('two').value="";
 }
 
 function removeAll(){
-    sessionStorage.clear(); 
+    sessionStorage.clear();
     display();
     document.getElementById('one').value="";
-    document.getElementById('two').value=""; 
+    document.getElementById('two').value="";
 }
 
 function display() {
@@ -42,7 +42,7 @@ function display() {
         var a = sessionStorage.key(x);
         var b = sessionStorage.getItem(a);
         /*add sorting here*/
-        rightbox.innerHTML += "<img src='images/sun.png' width='50px' /> "+a+" <img src='images/moon.png' width='50px' onclick=\"remove();\" /> "+b+
-		"&nbsp;<input type='button' style='font-size:18px;margin-right:20px;font-weight:bold' value='Remove' onclick=\"remove('"+a+"');\" /><br />";
+        rightbox.innerHTML += "<img src='images/sun2.png' width='50px' /> "+a+" <img src='images/moon2.png' width='45px' onclick=\"remove();\" /> "+b+
+		"&nbsp;<img src='images/close2.png' width='30px' hspace='5' vspace='5' id='hover' align=right value='Remove' onclick=\"remove('"+a+"');\" /><br />";
     }
 }

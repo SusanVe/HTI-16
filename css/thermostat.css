@@ -59,6 +59,19 @@ input[type='range'] {
 	padding-bottom:6px;
 	text-shadow: none;
 }
+
+#week:hover{
+	opacity:0.8;
+}
+
+#weekday:hover{
+	opacity:0.8;
+}
+
+#hover:hover{
+  opacity:0.8;
+}
+
 /* The switch - the box around the slider */
 .switch {
   position: relative;

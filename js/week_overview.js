@@ -1,3 +1,12 @@
+var Program = {};
+Program[Days.Monday]    = [];
+Program[Days.Tuesday]   = [];
+Program[Days.Wednesday] = [];
+Program[Days.Thursday]  = [];
+Program[Days.Friday]    = [];
+Program[Days.Saturday]  = [];
+Program[Days.Sunday]    = [];
+
 window.addEventListener("load", doFirst, false);
 
 function doFirst() {
@@ -45,4 +54,7 @@ function display() {
         rightbox.innerHTML += "<img src='images/sun2.png' width='50px' /> "+a+" <img src='images/moon2.png' width='45px' onclick=\"remove();\" /> "+b+
 		"&nbsp;<img src='images/close2.png' width='30px' hspace='5' vspace='5' id='hover' align=right value='Remove' onclick=\"remove('"+a+"');\" /><br />";
     }
+}
+function getProgram(day) {
+    return Program[day];
 }

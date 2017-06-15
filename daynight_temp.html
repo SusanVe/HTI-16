@@ -32,7 +32,7 @@
       <div id="setTemp">
         <form>
           <span style='width:150px;display:inline-block;'>Day temperature:</span></br>
-          <input type="number" id="dayTemp" style="width: 5em" min="5" max="30"> °C <input type="button" onclick="submitDay()" value="Submit"></br>
+          <input type="number" id="dayTemp" style="width: 5em" min="5.0" max="30.0"> °C <input type="button" onclick="submitDay()" value="Submit"></br>
           <div style="width:150px;display:inline-block;">
             <script>
           function get(attribute_name, xml_tag) {
@@ -64,7 +64,7 @@
             </script>
           </div></br></br>
           <span style='width:150px;display:inline-block;'>Night temperature:</span></br>
-          <input type="number" id="nightTemp" style="width: 5em" min="5" max="30"> °C <input type="button" onclick="submitNight()" value="Submit"></br>
+          <input type="number" id="nightTemp" style="width: 5em" min="5.0" max="30.0"> °C <input type="button" onclick="submitNight()" value="Submit"></br>
           <div style="width:150px;display:inline-block;">
             <script>
               document.write("Current Value: "+currentNightTemp);

@@ -4,14 +4,14 @@ var t=21;
 function minTemp() {
     if (t > 5) {
         t= Math.round(10*(t-0.1))/10;
-        document.getElementById("cTemp").innerHTML=t+" C&deg;";
+        document.getElementById("cTemp").innerHTML=t+" °C";
     }
 }
 
 function plusTemp() {
     if (t < 30) {
         t= Math.round( 10 *(t-(-0.1)))/10;
-        document.getElementById("cTemp").innerHTML=t+" C&deg;";
+        document.getElementById("cTemp").innerHTML=t+" °C";
     }
 }
 

@@ -26,7 +26,8 @@ a:link {
 
 body {
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: auto 200%;
+	background-position: top, center;
 	background-color: black;
 }
 

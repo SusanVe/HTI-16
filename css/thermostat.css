@@ -3,6 +3,7 @@ body{
 }
 
 body, div, p {
+	/* background-color: #bfe786; */
 	font-family: Calibri;
 	color:#ffffff;
 	font-size:18px;
@@ -25,10 +26,12 @@ a:link {
 }
 
 body {
+	/*background: linear-gradient(#d1f998, #7a9259); */
 	background-repeat: no-repeat;
-	background-size: auto 200%;
+	background-size: 170%;
 	background-position: top, center;
 	background-color: black;
+	background-attachment: fixed;
 }
 
 input[type='range'] {

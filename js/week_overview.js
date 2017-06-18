@@ -1,3 +1,30 @@
+Type = {
+    Day : 'day',
+    Night : 'night'
+};
+
+Days = {
+    Monday : 'Monday',
+    Tuesday : 'Tuesday',
+    Wednesday : 'Wednesday',
+    Thursday : 'Thursday',
+    Friday : 'Friday',
+    Saturday : 'Saturday',
+    Sunday : 'Sunday'
+};
+
+var MinTemperature = parseFloat(5.0);
+var MaxTemperature = parseFloat(30.0);
+var MaxSwitches = 5;
+
+var Time;
+var CurrentDay;
+var DayTemperature;
+var NightTemperature;
+var CurrentTemperature;
+var TargetTemperature;
+var ProgramState;
+
 var Program = {};
 Program[Days.Monday]    = [];
 Program[Days.Tuesday]   = [];

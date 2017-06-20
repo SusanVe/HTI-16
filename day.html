@@ -34,14 +34,21 @@
 		</div>
 
 		<h2>
+      <script>
+        var ind = (location.search.indexOf("="));
+        document.write(location.search.substr(ind+1));
+      </script>
+    </h2>
 
 			<script type="text/javascript">
-				<!--
-			    var ind = (location.search.indexOf("="));
-				document.write(location.search.substr(ind+1));
-				//-->
+        function addToServer(){
+          var day = location.search.substr(ind+1);
+          var one = document.getElementById('one').value;
+          var two = document.getElementById('two').value;
+          addPeriod(day, one, two);
+          display();
+        }
 			</script>
-		</h2>
 
 		<div id="leftbox">
 			<form>
@@ -51,7 +58,7 @@
 				<input type="time"  id="one" ><br />
 				<span style='width:150px;display:inline-block;float:left;'>Night switch:</span>
 				<input type= "time" id="two" ><br />
-				<input style='font-size:18px;margin-right:20px;margin-top:5px;font-weight:lighter;font-family:Calibri' type="button" id="save_button" value="Add" onClick = "addPeriod('Monday', '12:00', '13:00'); "/>
+				<input style='font-size:18px;margin-right:20px;margin-top:5px;font-weight:lighter;font-family:Calibri' type="button" id="save_button" value="Add" onClick = "addToServer();"/>
 			</form>
 		</div>
 		<div id="rightbox"></div>

@@ -62,6 +62,7 @@ function remove(item){
 }
 
 function removeAll(){
+    setDefault();
     sessionStorage.clear();
     display();
     document.getElementById('one').value="";

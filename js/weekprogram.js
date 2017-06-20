@@ -70,7 +70,7 @@ var ServerUrl = 'http://wwwis.win.tue.nl/2id40-ws/16';
   Program[Days.Saturday]  = [];
   Program[Days.Sunday]    = [];
 
-  ProgramState = get("weekProgramState", "week_program_state");
+  ProgramState = "on";
 
 document.addEventListener('DOMContentLoaded', function () {
   var checkbox = document.querySelector('input[type="checkbox"]');
@@ -87,5 +87,3 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
-
-/*--------------------------------------------------------------------------*/

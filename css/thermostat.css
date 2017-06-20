@@ -29,7 +29,7 @@ body {
 	/*background: linear-gradient(#d1f998, #7a9259); */
 	background-image: url("../backgroundp.jpg");
 	background-repeat: no-repeat;
-	background-size: 170%;
+	background-size: 170% 100%;
 	background-position: top, center;
 	background-color: black;
 	background-attachment: fixed;

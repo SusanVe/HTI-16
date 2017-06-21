@@ -1,3 +1,5 @@
+var ServerUrl = 'http://wwwis.win.tue.nl/2id40-ws/16';
+
 function uploadData(address, xml) {
     $.ajax({
         type: "put",
@@ -61,6 +63,7 @@ function getTemp() {
   var temp = get("currentTemperature", "current_temperature");
   document.getElementById("cTemp").innerHTML= temp;
 }
+
   function submitDay(attribute_name, xml_tag, value){
     var dayTemp = document.getElementById("dayTemp").value;
     put("dayTemperature", "day_temperature", dayTemp);
@@ -93,17 +96,14 @@ function getTemp() {
 
   function remove(item){
       sessionStorage.removeItem(item);
-      display();
+      removePeriod();
+      //display();
       document.getElementById('one').value="";
       document.getElementById('two').value="";
   }
 
   function removeAll(){
       setDefault();
-      sessionStorage.clear();
-      //display();
-      document.getElementById('one').value="";
-      document.getElementById('two').value="";
   }
 
   function display() {
@@ -127,10 +127,10 @@ function getTemp() {
     for (var i = 0; i < 7; i++) {
       var array = result[days[i]];
       if(array.length > 0) {
-        document.write("<h4>"+days[i]+ "</h4>");
+        document.write("<h3>"+days[i]+ "</h3></br>");
         for (var j = 0; j < array.length; j++) {
           var period = array[j];
-          document.write( "</br> Begin: " + period[0] + " - End: " + period[1] + "</br>");
+          document.write("<img src='images/sun2.png' width='50px' />" + period[0] + " - " + period[1] + "&nbsp;" + "<img src='images/moon2.png' width='45px'/>" + "</br>");
         }
       }
     }
@@ -152,4 +152,4 @@ function getTemp() {
       console.log(ProgramState);
     }
   });
-  });
+});

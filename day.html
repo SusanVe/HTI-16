@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <title>Thermostat</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src='js/jquery-2.1.0.min.js'></script>
-	<script src="js/api.js"></script>
-	<link rel="stylesheet" href="css/thermostat.css">
-	<link rel="stylesheet" href="css/week_overview.css">
+	  <script src="js/api.js"></script>
+    <script src="js/all_other.js"></script>
+	  <link rel="stylesheet" href="css/thermostat.css">
+	  <link rel="stylesheet" href="css/week_overview.css">
   </head>
   <body>
 	<div style="padding:5px">
-
 		<div style='float:right'>
 			<script type="text/javascript">
         document.write(get("day", "current_day")+"  -  "+get("time", "time"));
@@ -52,7 +52,7 @@
 				<input style='font-size:18px;margin-right:35px;margin-top:5px;font-weight:lighter;font-family:Calibri;border:none;padding:3px;padding-left:10px;padding-right:10px;background:#f4f4f4;' type="button" id="save_button" value="Add" onClick = "addToServer();"/>
 			</form>
 		</div>
-		<div id="rightbox" > <script> outputData(); pullProgram();</script> </div>
+		<div id="rightbox"></div>
 	</div>
   </body>
 </html>

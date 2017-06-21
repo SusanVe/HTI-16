@@ -3,17 +3,18 @@
     <head>
       <meta charset="utf-8" />
       <title>Thermostat</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <script src="js/jquery-2.1.0.min.js"></script>
       <script src="js/api.js"></script>
+      <script src="js/all_other.js"></script>
       <link rel="stylesheet" href="css/thermostat.css">
     </head>
   <body>
     <div style="padding:5px">
       <div style='float:right'>
         <script type="text/javascript">
-                  document.write(get("day", "current_day")+"  -  "+get("time", "time"));
-                </script>
+          document.write(get("day", "current_day")+"  -  "+get("time", "time"));
+        </script>
       </div>
         <div style= "float:left">
           <div><a href="thermostat.html"><img src="images/barrow.png" width="35px;"></a>
@@ -27,9 +28,9 @@
           <input type="number" id="dayTemp" style="width: 5em" min="5.0" max="30.0"> °C <input type="button" style='font-size:18px;font-weight:lighter;font-family:Calibri;margin-left:8px;border:none;padding:3px;background:#f4f4f4;padding-left:6px;padding-right:6px;' onclick="submitDay()" value="Submit"></br>
           <div style="width:200px;display:inline-block;">
             <script>
-          var currentDayTemp = get("dayTemperature", "day_temperature");
-          var currentNightTemp = get("nightTemperature", "night_temperature");
-          document.write("Current Value: "+currentDayTemp);
+              var currentDayTemp = get("dayTemperature", "day_temperature");
+              var currentNightTemp = get("nightTemperature", "night_temperature");
+              document.write("Current Value: "+currentDayTemp);
             </script>
           </div></br></br>
           <span style='width:200px;display:inline-block;font-size:22px;padding-bottom:3px;font-weight:normal;'>Night temperature:</span></br>
@@ -41,6 +42,5 @@
           </div></br>
         </form>
       </div>
-
   </body>
 </html>

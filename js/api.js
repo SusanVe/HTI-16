@@ -21,7 +21,6 @@ Days = {
     Saturday : 'Saturday',
     Sunday : 'Sunday'
 };
-
 var MinTemperature = parseFloat(5.0);
 var MaxTemperature = parseFloat(30.0);
 var MaxSwitches = 5;
@@ -126,7 +125,7 @@ function requestData(address, func) {
 function setWeekProgram() {
     var doc = document.implementation.createDocument(null, null, null);
     var program = doc.createElement('week_program');
-    program.setAttribute('state', ProgramState ? 'on' : 'off');
+    program.setAttribute('state', ProgramState ? 'off' : 'off');
     for (var key in Program) {
         var day = doc.createElement('day');
         day.setAttribute('name', key);
@@ -181,7 +180,7 @@ function setWeekProgram() {
 function setDefault() {
     var doc = document.implementation.createDocument(null, null, null);
     var program = doc.createElement('week_program');
-    program.setAttribute('state', ProgramState ? 'on' : 'off');
+    program.setAttribute('state', ProgramState ? 'off' : 'on');
     for (var key in Program) {
         var day = doc.createElement('day');
         day.setAttribute('name', key);

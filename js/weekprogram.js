@@ -49,6 +49,32 @@ var ServerUrl = 'http://wwwis.win.tue.nl/2id40-ws/16';
       return result;
   }
 
+  function getWeekProgram() {
+      return requestData(
+          '/weekProgram',
+          function(data) {
+              $(data).find('day').each(function() {
+                  var day = $(this).attr('name');
+                  Program[day] = [];
+                  $(this).find('switch').each(function() {
+                      if ($(this).attr('state') == 'on') {
+                          if ($(this).attr('type') == Type.Day) {
+                              getProgram(day).push([$(this).text(), '00:00']);
+                          } else {
+                              getProgram(day)[getProgram(day).length - 1][1] = $(this).text();
+                          }
+                      }
+                  })
+              });
+              return Program;
+          }
+      );
+  }
+
+  function getProgram(day) {
+      return Program[day];
+  }
+
   var MinTemperature = parseFloat(5.0);
   var MaxTemperature = parseFloat(30.0);
   var MaxSwitches = 5;
@@ -84,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
       ProgramState = "on";
       put("weekProgramState", "week_program_state", ProgramState);
       console.log(ProgramState);
+      console.log(getWeekProgram());
     }
   });
 });

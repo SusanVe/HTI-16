@@ -159,7 +159,6 @@ function getTemp() {
       ProgramState = "on";
       put("weekProgramState", "week_program_state", ProgramState);
       console.log(ProgramState);
-      console.log(getWeekProgram());
     }
   });
   });

@@ -180,7 +180,7 @@ function setWeekProgram() {
 function setDefault() {
     var doc = document.implementation.createDocument(null, null, null);
     var program = doc.createElement('week_program');
-    program.setAttribute('state', ProgramState ? 'off' : 'on');
+    program.setAttribute('state', ProgramState ? 'off' : 'off');
     for (var key in Program) {
         var day = doc.createElement('day');
         day.setAttribute('name', key);

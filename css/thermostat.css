@@ -53,6 +53,10 @@ body {
 	font-weight: bold;
 }
 
+#nightTemp, #dayTemp{
+	font-size:20px;
+}
+
 #week, #weekday {
 	margin: auto;
 	color:#000000;

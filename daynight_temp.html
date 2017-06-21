@@ -3,9 +3,8 @@
     <head>
       <meta charset="utf-8" />
       <title>Thermostat</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <script src="js/jquery-2.1.0.min.js"></script>
-      <script src="js/daynight.js"></script>
       <script src="js/api.js"></script>
       <link rel="stylesheet" href="css/thermostat.css">
     </head>
@@ -13,55 +12,31 @@
     <div style="padding:5px">
       <div style='float:right'>
         <script type="text/javascript">
-          document.write(get("day", "current_day")+"  -  "+get("time", "time"));
-        </script>
+                  document.write(get("day", "current_day")+"  -  "+get("time", "time"));
+                </script>
       </div>
         <div style= "float:left">
           <div><a href="thermostat.html"><img src="images/barrow.png" width="35px;"></a>
         </div>
       </div>
-      <br>
       <h2>Day/Night Temperature</h2>
 
       <div id="setTemp">
         <form>
-          <span style='width:200px;display:inline-block;font-size:26px;padding-bottom:3px;font-weight:normal;'>Day temperature: </span><img src="Images/sun2.png" width=10%;></br>
-          <input type="number" id="dayTemp" style="width: 3em" min="5.0" max="30.0"> °C <input type="button" style='font-size:18px;font-weight:lighter;font-family:Calibri;margin-left:8px;border:none;padding:3px;background:#f4f4f4;padding-left:6px;padding-right:6px;' onclick="submitDay()" value="Submit"></br>
+          <span style='width:200px;display:inline-block;font-size:22px;padding-bottom:3px;font-weight:normal;'>Day temperature:</span></br>
+          <input type="number" id="dayTemp" style="width: 5em" min="5.0" max="30.0"> °C <input type="button" style='font-size:18px;font-weight:lighter;font-family:Calibri;margin-left:8px;border:none;padding:3px;background:#f4f4f4;padding-left:6px;padding-right:6px;' onclick="submitDay()" value="Submit"></br>
           <div style="width:200px;display:inline-block;">
             <script>
-          function get(attribute_name, xml_tag) {
-              return requestData(
-                  "/"+attribute_name,
-                  function(data) {
-                      return $(data).find(xml_tag).text();
-                  }
-              );
-          }
-
-          function requestData(address, func) {
-              var result;
-              $.ajax({
-                  type: "get",
-                  url: ServerUrl + address,
-                  dataType: "xml",
-                  async: false,
-                  success: function(data) {
-                      result = func(data);
-                  }
-              });
-              return result;
-          }
-          var txt = "Current Value: ";
           var currentDayTemp = get("dayTemperature", "day_temperature");
           var currentNightTemp = get("nightTemperature", "night_temperature");
-          document.write(txt.fontsize(5).italics()+currentDayTemp.fontsize(5).italics());
+          document.write("Current Value: "+currentDayTemp);
             </script>
           </div></br></br>
-          <span style='width:250px;display:inline-block;font-size:26px;padding-bottom:3px;font-weight:normal;'>Night temperature:</span></br>
-          <input type="number" id="nightTemp" style="width: 3em" min="5.0" max="30.0"> °C <input type="button" style='font-size: 18px;font-weight:lighter;font-family:Calibri;margin-left:8px;border:none;padding:3px;background:#f4f4f4;padding-left:6px;padding-right:6px;' value="Submit" onClick="submitNight()"></br>
-          <div style="width:250px;display:inline-block;">
+          <span style='width:200px;display:inline-block;font-size:22px;padding-bottom:3px;font-weight:normal;'>Night temperature:</span></br>
+          <input type="number" id="nightTemp" style="width: 5em" min="5.0" max="30.0"> °C <input type="button" style='font-size: 18px;font-weight:lighter;font-family:Calibri;margin-left:8px;border:none;padding:3px;background:#f4f4f4;padding-left:6px;padding-right:6px;' value="Submit" onClick="submitNight()"></br>
+          <div style="width:200px;display:inline-block;">
             <script>
-              document.write(txt.fontsize(5).italics()+currentNightTemp.fontsize(5).italics());
+              document.write("Current Value: "+currentNightTemp);
             </script>
           </div></br>
         </form>

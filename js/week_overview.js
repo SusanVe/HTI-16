@@ -1,3 +1,5 @@
+var ServerUrl = 'http://wwwis.win.tue.nl/2id40-ws/16';
+
 Type = {
     Day : 'day',
     Night : 'night'
@@ -85,4 +87,64 @@ function display() {
 }
 function getProgram(day) {
     return Program[day];
+}
+
+function pullProgram() {
+  var days = ['Monday','Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  var result = getWeekProgram();
+  for (var i = 0; i < 7; i++) {
+    var array = result[days[i]];
+    if(array.length > 0) {
+      document.write("<h4>"+days[i]+ "</h4>");
+      for (var j = 0; j < array.length; j++) {
+        var period = array[j];
+        document.write("Begin: " + period[0] + "End: " + period[1] + "</br>");
+      }
+    }
+  }
+}
+
+function outputData() {
+  var result = getWeekProgram();
+  var dayResObject = result['Tuesday'];
+  var dayResArr = dayResObject[0];
+  var lowerBound = dayResArr[0];
+  var upperBound = dayResArr[1];
+  document.write("Start Time; " + lowerBound + "End Time: " + upperBound);
+}
+
+function getWeekProgram() {
+    return requestData(
+        '/weekProgram',
+        function(data) {
+            $(data).find('day').each(function() {
+                var day = $(this).attr('name');
+                Program[day] = [];
+                $(this).find('switch').each(function() {
+                    if ($(this).attr('state') == 'on') {
+                        if ($(this).attr('type') == Type.Day) {
+                            getProgram(day).push([$(this).text(), '00:00']);
+                        } else {
+                            getProgram(day)[getProgram(day).length - 1][1] = $(this).text();
+                        }
+                    }
+                })
+            });
+            return Program;
+        }
+    );
+}
+
+function requestData(address, func) {
+    var result;
+    $.ajax({
+        type: "get",
+        url: ServerUrl + address,
+        dataType: "xml",
+        async: false,
+        success: function(data) {
+            result = func(data);
+        }
+    });
+    return result;
 }

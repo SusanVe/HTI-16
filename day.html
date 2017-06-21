@@ -15,23 +15,7 @@
 
 		<div style='float:right'>
 			<script type="text/javascript">
-
-      var day_names = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-      var myDay = new Date();
-      myDay.setDate(myDay.getDate()+7);
-      var currentDay = myDay.getDay();
-      document.write(day_names[currentDay]+"  -  ");
-
-				var currentTime = new Date()
-				var hours = currentTime.getHours()
-				var minutes = currentTime.getMinutes()
-        if (minutes > 9) {
-  			document.write(hours+":"+minutes);
-      }
-      else {
-        document.write(hours+":0"+minutes);
-      }
-				//-->
+        document.write(get("day", "current_day")+"  -  "+get("time", "time"));
 			</script>
     </div>
       <div style= "float:left">
@@ -69,7 +53,7 @@
 				<input style='font-size:18px;margin-right:35px;margin-top:5px;font-weight:lighter;font-family:Calibri;border:none;padding:3px;padding-left:10px;padding-right:10px;background:#f4f4f4;' type="button" id="save_button" value="Add" onClick = "addToServer();"/>
 			</form>
 		</div>
-		<div id="rightbox"></div>
+		<div id="rightbox" > <script> outputData(); pullProgram();</script> </div>
 	</div>
   </body>
 </html>

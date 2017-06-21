@@ -76,7 +76,7 @@ function getTemp() {
   function doFirst() {
       var button = document.getElementById('save_button');
       button.addEventListener("click", save, false);
-      display();
+      //display();
   }
 
   function save(){
@@ -85,7 +85,7 @@ function getTemp() {
       /*add various types of checks here*/
       if (one != "" && two != "") {
           sessionStorage.setItem(one,two);
-          display();
+          //display();
           document.getElementById('one').value="";
           document.getElementById('two').value="";
       }
@@ -101,7 +101,7 @@ function getTemp() {
   function removeAll(){
       setDefault();
       sessionStorage.clear();
-      display();
+      //display();
       document.getElementById('one').value="";
       document.getElementById('two').value="";
   }
@@ -130,7 +130,7 @@ function getTemp() {
         document.write("<h4>"+days[i]+ "</h4>");
         for (var j = 0; j < array.length; j++) {
           var period = array[j];
-          document.write("Begin: " + period[0] + "End: " + period[1] + "</br>");
+          document.write( "</br> Begin: " + period[0] + " - End: " + period[1] + "</br>");
         }
       }
     }

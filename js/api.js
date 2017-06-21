@@ -125,7 +125,7 @@ function requestData(address, func) {
 function setWeekProgram() {
     var doc = document.implementation.createDocument(null, null, null);
     var program = doc.createElement('week_program');
-    program.setAttribute('state', ProgramState ? 'on' : 'off');
+    program.setAttribute('state',  ProgramState ? 'on' : 'off' );
     for (var key in Program) {
         var day = doc.createElement('day');
         day.setAttribute('name', key);

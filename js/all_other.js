@@ -108,7 +108,7 @@ function getTemp() {
 
   function display() {
       var rightbox = document.getElementById('rightbox');
-      rightbox.innerHTML="";
+      //rightbox.innerHTML="";
       if (sessionStorage.length==5) {
           document.getElementById('save_button').style="disabled";
       }
@@ -134,15 +134,6 @@ function getTemp() {
         }
       }
     }
-  }
-
-  function outputData() {
-    var result = getWeekProgram();
-    var dayResObject = result['Tuesday'];
-    var dayResArr = dayResObject[0];
-    var lowerBound = dayResArr[0];
-    var upperBound = dayResArr[1];
-    document.write("Start Time; " + lowerBound + "End Time: " + upperBound);
   }
 
   ProgramState = "on";

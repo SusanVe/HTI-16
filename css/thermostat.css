@@ -33,6 +33,12 @@ h4 {
 	display:inline;
 }
 
+h5 {
+	display:inline;
+	font-size: 20px;
+	font-weight: lighter;
+}
+
 a:link {
   text-decoration : none  ;
 }

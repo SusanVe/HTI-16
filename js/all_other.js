@@ -98,19 +98,12 @@ function getTemp() {
     var ind = (location.search.indexOf("="));
     var webday = location.search.substr(ind+1);
     var id = 1;
-    removePeriod("webday", 3);
-    //display();
-    document.getElementById('one').value="";
-    document.getElementById('two').value="";
+    removePeriod(webday, 0);
   }
 
   function removeAll(){
-    var ind = (location.search.indexOf("="));
-    var webday = location.search.substr(ind+1);
-    for(var i = 0; i < 4; i++) {
-    removePeriod("webday", "i");
+      setDefault();
   }
-}
 
   function display() {
       var rightbox = document.getElementById('rightbox');

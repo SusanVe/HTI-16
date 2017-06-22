@@ -94,12 +94,14 @@ function getTemp() {
       }
   }
 
-  function remove(item){
-      sessionStorage.removeItem(item);
-      removePeriod();
-      //display();
-      document.getElementById('one').value="";
-      document.getElementById('two').value="";
+  function remove(){
+    var ind = (location.search.indexOf("="));
+    var webday = location.search.substr(ind+1);
+    var id = 1;
+    removePeriod("webday", 3);
+    //display();
+    document.getElementById('one').value="";
+    document.getElementById('two').value="";
   }
 
   function removeAll(){
@@ -134,8 +136,8 @@ function getTemp() {
         document.write("<h3>"+days[i]+"</h3><h4></br>Switches left: " + switchLeft  + "</h4></br>");
         for (var j = 0; j < array.length; j++) {
           var period = array[j];
-          document.write("<img src='images/sun2.png' width='50px' />" + period[0] +  " - " + period[1] + "&nbsp;" + "<img src='images/moon2.png' width='45px'/>" +
-          "<img src='images/close2.png' width='30px' hspace='5' vspace='5' id='hover' align=right value='Remove' onclick=\"removePeriod();\" />" + "</br>");
+          document.write("<img src='images/sun2.png' width='50px' />" + period[0] +  " - " + period[1] + "&nbsp;" + "<img src='images/moon2.png' width='45px' onclick=\"remove();\"/>" +
+          "<img src='images/close2.png' width='30px' hspace='5' vspace='5' id='hover' align=right value='Remove' onclick=\"remove();\" />" + "</br>");
         }
       }
       }

@@ -105,8 +105,12 @@ function getTemp() {
   }
 
   function removeAll(){
-      setDefault();
+    var ind = (location.search.indexOf("="));
+    var webday = location.search.substr(ind+1);
+    for(var i = 0; i < 4; i++) {
+    removePeriod("webday", "i");
   }
+}
 
   function display() {
       var rightbox = document.getElementById('rightbox');

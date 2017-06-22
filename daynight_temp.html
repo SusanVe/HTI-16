@@ -25,7 +25,7 @@
       <div id="setTemp">
         <form>
           <span style='width:200px;display:inline-block;font-size:22px;padding-bottom:3px;font-weight:normal;'>Day temperature:</span></br>
-          <input type="number" id="dayTemp" style="width: 5em" min="5.0" max="30.0"> °C <input type="button" style='font-size:18px;font-weight:lighter;font-family:Calibri;margin-left:8px;border:none;padding:3px;background:#f4f4f4;padding-left:6px;padding-right:6px;' onclick="submitDay()" value="Submit"></br>
+          <input type="number" id="dayTemp" style="width: 5em" min="5.0" max="30.0"> °C <input type="button" style='font-size:18px;font-weight:lighter;font-family:Calibri;margin-left:8px;border:none;padding:3px;background:#f4f4f4;padding-left:6px;padding-right:6px;' onclick="submitDay(); location.reload();" value="Submit"></br>
           <div style="width:200px;display:inline-block;">
             <script>
               var currentDayTemp = get("dayTemperature", "day_temperature");
@@ -34,7 +34,7 @@
             </script>
           </div></br></br>
           <span style='width:200px;display:inline-block;font-size:22px;padding-bottom:3px;font-weight:normal;'>Night temperature:</span></br>
-          <input type="number" id="nightTemp" style="width: 5em" min="5.0" max="30.0"> °C <input type="button" style='font-size: 18px;font-weight:lighter;font-family:Calibri;margin-left:8px;border:none;padding:3px;background:#f4f4f4;padding-left:6px;padding-right:6px;' value="Submit" onClick="submitNight()"></br>
+          <input type="number" id="nightTemp" style="width: 5em" min="5.0" max="30.0"> °C <input type="button" style='font-size: 18px;font-weight:lighter;font-family:Calibri;margin-left:8px;border:none;padding:3px;background:#f4f4f4;padding-left:6px;padding-right:6px;' value="Submit" onClick="submitNight(); location.reload();"></br>
           <div style="width:200px;display:inline-block;">
             <script>
               document.write("Current Value: "+currentNightTemp);

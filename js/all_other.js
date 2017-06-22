@@ -127,10 +127,11 @@ function getTemp() {
     for (var i = 0; i < 7; i++) {
       var array = result[days[i]];
       if(array.length > 0) {
-        document.write("<h3>"+days[i]+ "</h3></br>");
+        var switchLeft = 5 - array.length;
+        document.write("<h3>"+days[i]+"</h3><h4></br>Switches left: " + switchLeft  + "</h4></br>");
         for (var j = 0; j < array.length; j++) {
           var period = array[j];
-          document.write("<img src='images/sun2.png' width='50px' />" + period[0] + " - " + period[1] + "&nbsp;" + "<img src='images/moon2.png' width='45px'/>" + "</br>");
+          document.write("<img src='images/sun2.png' width='50px' />" + period[0] +  " - " + period[1] + "&nbsp;" + "<img src='images/moon2.png' width='45px'/>" + "</br>");
         }
       }
     }

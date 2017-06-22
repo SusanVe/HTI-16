@@ -131,6 +131,7 @@ function getTemp() {
       var array = result[days[i]];
       if(array.length >= 0) {
         var switchLeft = 5 - array.length;
+        document.write("<h3>"+days[i]+"</h3><h5></br>Switches left: " + switchLeft  + "</h5></br>");
         for (var j = 0; j < array.length; j++) {
           var period = array[j];
           document.write("<img src='images/sun2.png' width='50px' />" + period[0] +  " - " + period[1] + "&nbsp;" + "<img src='images/moon2.png' width='45px'/>" +

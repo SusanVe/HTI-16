@@ -1,11 +1,11 @@
 #leftbox{
-    float:left;
-    width:310px;
+    float:center;
+    width:100%;
 	margin-bottom:15px;
 }
 #rightbox{
-    float:left;
-    width:310px;
+    float:center;
+    width:100%;
     border-top:1px solid white;
     padding-top: 5px;
 }

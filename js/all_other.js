@@ -28,8 +28,8 @@ function addPeriod(day, start, end) {
 */
 function removePeriod(day, idx) {
     var program = getWeekProgram()[day];
-    var start = program[idx][0];
-    var end = program[idx][1];
+    //var start = program[idx][0];
+    //var end = program[idx][1];
     program.splice(idx,1);
     setWeekProgram();
 }
@@ -102,7 +102,10 @@ function getTemp() {
   }
 
   function removeAll(){
-      setDefault();
+    var webday = location.search.substr(ind+1);
+      for(var i = 1; i < 5; i++){
+        removePeriod(webday, 0);
+      }
   }
 
   function display() {

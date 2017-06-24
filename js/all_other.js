@@ -94,11 +94,10 @@ function getTemp() {
       }
   }
 
-  function remove(){
+  function remove(id){
     var ind = (location.search.indexOf("="));
     var webday = location.search.substr(ind+1);
-    var id = 1;
-    removePeriod(webday, 0);
+    removePeriod(webday, id);
   }
 
   function removeAll(){
@@ -136,8 +135,9 @@ function getTemp() {
         document.write("<h3>"+days[i]+"</h3><h5></br>Switches left: " + switchLeft  + "</h5></br>");
         for (var j = 0; j < array.length; j++) {
           var period = array[j];
+          var id = j;
           document.write("<img src='images/sun2.png' width='50px' />" + period[0] +  " - " + period[1] + "&nbsp;" + "<img src='images/moon2.png' width='45px' onclick=\"remove();\"/>" +
-          "<img src='images/close2.png' width='30px' hspace='5' vspace='5' id='hover' align=right value='Remove' onclick=\"remove();\" />" + "</br>");
+          "<img src='images/close2.png' width='30px' hspace='5' vspace='5' id="+ id +" align=right value='Remove' onclick=\"remove(id);\" />" + "</br>");
         }
       }
       }

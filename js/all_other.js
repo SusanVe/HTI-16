@@ -98,6 +98,7 @@ function getTemp() {
     var ind = (location.search.indexOf("="));
     var webday = location.search.substr(ind+1);
     removePeriod(webday, id);
+    location.reload();
   }
 
   function removeAll(){
@@ -105,6 +106,7 @@ function getTemp() {
       for(var i = 1; i < 5; i++){
         removePeriod(webday, 0);
       }
+    location.reload();
   }
 
   function display() {

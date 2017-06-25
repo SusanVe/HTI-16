@@ -16,6 +16,9 @@ This thermostat prototype was created in HTML5 and to open it on a mobile device
 
 First, you have to set up your own computer as a local server.
 Download the programm XAMPP: https://www.apachefriends.org/index.html
+In order to put the files on this server, open the folder called 'xampp' on your computer.
+Next go to the folder 'htdocs'.
+Copy the 'HTI-16' folder into this empty folder.
 Open the XAMPP control panel.
 Press the start button behind the module ‘apache’.
 Your computer is now set up as a local server.

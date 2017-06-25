@@ -10,13 +10,9 @@
 	  <link rel="stylesheet" href="css/thermostat.css">
 	  <link rel="stylesheet" href="css/week_overview.css">
   </head>
-  <body>
+  <body onload="onloadStuff()">
 	<div style="padding:5px">
-		<div style='float:right'>
-			<script type="text/javascript">
-        document.write(get("day", "current_day")+"  -  "+get("time", "time"));
-			</script>
-		</div>
+		<div style='float:right' id="timeslot"></div>
       <div style= "float:left">
         <div><a href="thermostat.html"><img src="images/barrow.png" width='35px'></a>
       </div>

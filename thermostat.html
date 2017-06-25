@@ -10,17 +10,13 @@
     <script src="js/all_other.js"></script>
 	  <link rel="stylesheet" href="css/thermostat.css">
   </head>
-  <body>
+  <body onload="onloadStuff(); updateTemp()">
 	<div style="padding:5px">
-		<div style='float:right'>
-			<script type="text/javascript">
-        document.write(get("day", "current_day")+ "  -  " + get("time","time"));
-			</script>
-		</div>
+		<div style='float:right' id="timeslot"></div>
     <br>
 	<div><img src='images/white-arrow-up.png' width='90px' style="padding-top:20px;"
 		onClick="plusTemp()" /></div>
-	<div id="cTemp"><script> getTemp(); </script> °C</div>
+	<div id="cTemp"></div>
 	<div><img src='images/white-arrow-down.png' width='90px'style="padding-bottom:15px;"
 		onClick="minTemp()"></div>
 

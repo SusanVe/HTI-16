@@ -10,6 +10,18 @@ function uploadData(address, xml) {
     });
 }
 
+function onloadStuff(){
+  var place = document.getElementById("timeslot");
+  place.innerHTML = get("day", "current_day")+ "  -  " + get("time","time");
+  setTimeout(onloadStuff, 1500);
+}
+
+function updateTemp(){
+  var place2 = document.getElementById("cTemp");
+  place2.innerHTML = get("currentTemperature", "current_temperature") + " °C";
+  setTimeout(updateTemp, 1500);
+}
+
 function parseTime(t) {
     return parseFloat(t.substr(0,2)) + parseFloat(t.substr(3,2))/60;
 }
